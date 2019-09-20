@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="guardian dwarf" nameDescription="a guardian dwarf" race="blood" experience="25000" speed="400" manacost="650">
+  <health now="30000" max="30000"/>
+  <look type="70" head="20" body="30" legs="40" feet="50" corpse="2983"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="0"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-450" max="-950"/>
+    <attack name="physical" interval="2000" chance="25" range="7" min="-350" max="-650">
+      <attribute key="shootEffect" value="arrow"/>
+    </attack>
+  </attacks>
+  <defenses armor="30" defense="30">
+    <defense name="healing" interval="1000" chance="10" min="300" max="650">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="1"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <voices interval="5000" chance="10">
+    <voice sentence="Let's have a fight!"/>
+    <voice sentence="Welcome to my battleground."/>
+    <voice sentence="Have you seen princess Lumelia?"/>
+    <voice sentence="I will sing a tune at your grave."/>
+  </voices>
+  <loot>
+    <item id="2491" chance="12000"/> -- crown helmet :: Arm 7
+    <item id="2148" countmax="100" chance1="100000" chancemax="0"/> -- gold coin
+    <item id="1987" chance="100000">
+      -- bag
+      <inside>
+        <item id="2377" chance="15000"/> -- two handed sword :: Def 25 :: Atk 30
+        <item id="2487" chance="6000"/> -- crown armor :: Arm 13
+        <item id="2392" chance="7000"/> -- fire sword :: Def 20 :: Atk 35
+        <item id="2519" chance="9000"/> -- crown shield :: Def 32
+        <item id="2488" chance="8000"/> -- crown legs :: Arm 8
+        <item id="2652" chance="100000"/> -- green tunic :: Arm 1
+        <item id="2164" chance="10000"/> -- might ring
+        <item id="2391" chance="13330"/> -- war hammer :: Def 10 :: Atk 45
+        <item id="2744" chance="200000"/> -- red rose
+      </inside>
+    </item>
+  </loot>
+</monster>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Fury" nameDescription="a fury" race="blood" experience="4500" speed="460" manacost="0">
+	<health now="4100" max="4100"/>
+  <look type="58" head="20" body="30" legs="40" feet="50" corpse="3065"/>
+	<targetchange interval="5000" chance="25"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="95"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="80" attack="113"/>
+		<attack name="energy" interval="2000" chance="9" range="7" target="1" min="-0" max="-250">
+			<attribute key="shootEffect" value="energy"/>
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="speed" interval="2000" chance="5" range="7" speedchange="-440" duration="5000">
+			<attribute key="shootEffect" value="energy"/>
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>	
+		<attack name="lifedrain" interval="2000" chance="8" target="0" radius="3" min="-0" max="-300">
+			<attribute key="areaEffect" value="blackspark"/>
+		</attack>		
+		<attack name="fire" interval="2000" chance="7" length="5" spread="3" min="-200" max="-300">
+			<attribute key="areaEffect" value="explosionarea"/>
+		</attack>	
+		<attack name="energy" interval="2000" chance="6" length="8" spread="0" min="-0" max="-700">
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>			
+		<attack name="energy" interval="2000" chance="10" range="7" radius="4" target="0" min="-0" max="-300">
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
+		<attack name="skills" interval="2000" chance="12" target="0" radius="4" shielding="-1">
+			<attribute key="areaEffect" value="yellownote"/>
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="20">
+		<defense name="speed" interval="2000" chance="20" speedchange="360" duration="2000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="100"/>
+		<element icePercent="30"/>
+		<element holyPercent="30"/>
+		<element deathPercent="-10"/>
+		<element energyPercent="-10"/>
+		<element earthPercent="-10"/>
+		<element physicalPercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="3000" chance="30">
+		<voice sentence="Ahhhhrrrr!"/>
+		<voice sentence="Waaaaah!"/>
+		<voice sentence="Carnage!"/>
+	</voices>
+	<loot>
+    <item id="2148" countmax="100" chance="41900" /><!-- gold coin -->
+    <item id="2148" countmax="100" chance="41900" /><!-- gold coin -->
+    <item id="2148" countmax="54" chance="41900" /><!-- gold coin -->
+    <item id="2181" chance="17550" /><!-- terra rod -->
+    <item id="2152" countmax="4" chance="2350" /><!-- platinum coin -->
+    <item id="2150" countmax="3" chance="5750" /><!-- small amethyst -->
+
+    <item id="1987" chance="100000"><!-- bag -->
+        <inside>
+
+            <item id="2645" chance="1475" /><!-- steel boots -->
+
+            <item id="2124" chance="550" /><!-- crystal ring -->
+
+        </inside>
+    </item>
+</loot>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</monster>

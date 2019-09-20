@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="lizard sentinel" nameDescription="a lizard sentinel" race="blood" experience="110" speed="240" manacost="0">
+  <health now="265" max="265"/>
+  <look type="114" head="20" body="30" legs="40" feet="50" corpse="4259"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="1"/>
+    <flag pushable="1"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="0"/>
+    <flag targetdistance="4"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="10"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="35" attack="26"/>
+    <attack name="physical" interval="1000" chance="7" range="7" min="-40" max="-70">
+      <attribute key="shootEffect" value="spear"/>
+    </attack>
+  </attacks>
+  <defenses armor="17" defense="14"/>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="0"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="0"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <voices interval="5000" chance="10">
+    <voice sentence="Tssss!"/>
+  </voices>
+  <loot>
+    <item id="2148" countmax="100" chance1="100000" chancemax="0"/> -- gold coin
+    <item id="2148" countmax="25" chance1="100000" chancemax="0"/> -- gold coin
+    <item id="2182" chance="450"/> -- snakebite rod
+    <item id="2425" chance="1428"/> -- obsidian lance :: Def 10 :: Atk 34
+    <item id="2381" chance="6666"/> -- halberd :: Def 14 :: Atk 35
+    <item id="2457" chance="6666"/> -- steel helmet :: Arm 6
+    <item id="1987" chance="100000"> -- bag
+      <inside>
+        <item id="2148" countmax="50" chance1="100000" chancemax="0"/> -- gold coin
+        <item id="2147" countmax="4" chance1="4000" chancemax="0"/> -- small ruby
+        <item id="2654" chance="20000"/> -- cape :: Arm 1
+      </inside>
+    </item>
+  </loot>
+</monster>

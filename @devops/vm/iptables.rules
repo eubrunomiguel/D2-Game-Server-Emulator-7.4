@@ -1,0 +1,53 @@
+*filter
+:INPUT ACCEPT [194:9380]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [149073:322554493]
+:FINFLOOD - [0:0]
+:ICMPFLOOD - [0:0]
+:INVALIDFLOOD - [0:0]
+:RSTFLOOD - [0:0]
+:SYNFLOOD - [0:0]
+:UDPFLOOD - [0:0]
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+# Local addresses
+-A INPUT -d 127.0.0.1/32 -p tcp -j ACCEPT
+# Monitoring
+-A INPUT -s 50.116.17.17/32 -d 173.193.171.178/32 -p udp -m udp --dport 161 -j ACCEPT
+-A INPUT -s 50.116.17.17/32 -d 173.193.171.178/32 -p tcp -m tcp -j ACCEPT
+# Frag packages are dropped
+-A INPUT -i eth0 -f -j DROP
+# Flood control
+-A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j SYNFLOOD
+-A INPUT -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j INVALIDFLOOD
+-A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK RST -j RSTFLOOD
+-A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK FIN -j FINFLOOD
+-A INPUT -p udp -j UDPFLOOD
+-A INPUT -p icmp -j ICMPFLOOD
+-A INPUT -p tcp -m tcp --dport 21 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 110 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 7171 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 7172 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 3306 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 8181 -j ACCEPT
+-A INPUT -p tcp -j DROP
+-A FINFLOOD -m limit --limit 20/sec --limit-burst 25 -j RETURN
+-A FINFLOOD -m limit --limit 10/min -j LOG --log-prefix "Firewall: *FIN Blocked* "
+-A FINFLOOD -j DROP
+-A ICMPFLOOD -p icmp -m limit --limit 10/sec -j RETURN
+-A ICMPFLOOD -m limit --limit 10/min -j LOG --log-prefix "Firewall: *ICMP Blocked* "
+-A ICMPFLOOD -j DROP
+-A INVALIDFLOOD -m limit --limit 3/sec --limit-burst 6 -j RETURN
+-A INVALIDFLOOD -m limit --limit 10/min -j LOG --log-prefix "Firewall: *INV Blocked* "
+-A INVALIDFLOOD -j DROP
+-A RSTFLOOD -m limit --limit 10/sec --limit-burst 15 -j RETURN
+-A RSTFLOOD -m limit --limit 10/min -j LOG --log-prefix "Firewall: *RST Blocked* "
+-A RSTFLOOD -j DROP
+-A SYNFLOOD -m limit --limit 180/sec --limit-burst 200 -j RETURN
+-A SYNFLOOD -m limit --limit 10/min -j LOG --log-prefix "Firewall: *SYN Blocked* "
+-A SYNFLOOD -j DROP
+-A UDPFLOOD -m limit --limit 10/sec --limit-burst 20 -j RETURN
+-A UDPFLOOD -m limit --limit 10/min -j LOG --log-prefix "Firewall: *UDP Blocked* "
+-A UDPFLOOD -j DROP
+COMMIT

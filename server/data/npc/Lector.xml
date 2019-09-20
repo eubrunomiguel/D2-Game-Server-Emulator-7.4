@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Lector" script="default.lua" walkinterval="1000" access="3" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="128" head="79" body="38" legs="0" feet="124" addons="0"/>
+    <parameters>
+        
+        <parameter key="message_greet" value="Welcome to my humble meat shop, |PLAYERNAME|."/>
+		<parameter key="message_farewell" value="Please come and buy again, |PLAYERNAME|."/>
+        <parameter key="message_sendtrade" value="Of course, take a good look at my meat."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;job;offer;" />
+        <parameter key="keyword_reply1" value="My father named me Lector." />
+        <parameter key="keyword_reply2" value="I am the butcher. I am selling delicious meat." />
+        <parameter key="keyword_reply3" value="I can offer you ham or meat." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="ham,2671,6;meat,2666,3;" />
+        <parameter key="shop_sellable" value="" />
+    </parameters>
+</npc>

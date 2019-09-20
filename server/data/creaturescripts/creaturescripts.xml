@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<creaturescripts>
+	<event type="login" name="playerlogin" script="login.lua"/>
+	<event type="die" name="playerdie" script="die.lua"/>
+	<event type="advance" name="playeradvance" script="advance.lua"/>
+
+ 	<event type="kill" name="task" event="script" script="killtask.lua"/>
+	<event type="kill" name="inquisition" event="script" script="inquisition.lua"/>
+	<event type="kill" name="burningheart" event="script" script="burningheart.lua"/>
+ 	<event type="kill" name="arena" event="script" script="arena.lua"/>
+	<event type="kill" name="pvparena" event="script" script="pvparena.lua"/>
+	<event type="kill" name="lootmessage" event="script" script="lootmessage.lua"/>
+	<event type="kill" name="killevent" event="script" script="killEvent.lua"/>
+</creaturescripts>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="King Tibianus" script="promotion.lua" walkinterval="1000" access="3" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="130" head="21" body="87" legs="107" feet="95"/>
+    <parameters>
+        
+        <parameter key="message_greet" value="I greet thee, my loyal subject."/>
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|!"/>
+
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;job;help,premium scroll;" />
+        <parameter key="keyword_reply1" value="It's hard to believe that you don't know your own king!" />
+        <parameter key="keyword_reply2" value="I am your sovereign, King Tibianus III, and it's my duty to provide justice and guidance for my subjects." />
+        <parameter key="keyword_reply3" value="Visit Quentin, the monk, for help." />
+        <parameter key="keyword_reply4" value="I buy your premium scroll for 50000 gold coins." />
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_sellable" value="premium scroll,2345,50000;" />
+
+    </parameters>
+</npc>
+
+
+
+
+
+        

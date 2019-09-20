@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="dragona" nameDescription="a dragona" race="blood" experience="85000" speed="460" manacost="0">
+  <health now="85000" max="85000"/>
+  <look type="34" head="20" body="30" legs="40" feet="50" corpse="3104"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="150" attack="70"/>
+    <attack name="poison" interval="2000" chance="5" length="8" spread="3" min="-350" max="-785">
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+
+    <attack name="lifedrain" interval="2000" chance="5" length="8" spread="3" min="-600" max="-881">
+      <attribute key="areaEffect" value="greenshimmer"/>
+    </attack>
+    <attack name="physical" interval="2000" chance="7" range="7" radius="4" target="1" min="-400" max="-695">
+      <attribute key="shootEffect" value="fire"/>
+      <attribute key="areaEffect" value="redspark"/>
+    </attack>
+    <attack name="poison" interval="2000" chance="9" range="7" radius="4" target="1" min="-505" max="-990">
+      <attribute key="shootEffect" value="poison"/>
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+    <attack name="physical" interval="2000" chance="6" range="7" target="1" min="-550" max="-800">
+      <attribute key="shootEffect" value="suddendeath"/>
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+    <attack name="poison" interval="2000" chance="10" range="7" min="-200" max="-580">
+      <attribute key="shootEffect" value="poison"/>
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+    <attack name="lifedrain" interval="2000" chance="5" radius="3" min="-250" max="-400">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+  </attacks>
+  <defenses armor="5" defense="35">
+    <defense name="healing" interval="2000" chance="10" min="220" max="580">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity paralyze="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <summons maxSummons="1">
+    <summon name="demodras" interval="2000" chance="20" max="1"/>
+  </summons>
+  <voices interval="5000" chance="10">
+    <voice sentence="FEEEED MY ETERNAL HUNGER!" yell="1"/>
+    <voice sentence="I SENSE LIFE" yell="1"/>
+  </voices>
+  <loot>
+    <item id="2547" countmax="100" chance="4875" />
+    <!-- power bolt -->
+    <item id="2498" chance="14000" />
+    <!-- royal helmet -->
+    <item id="2413" chance="40800" />
+    <!-- broadsword -->
+    <item id="2236" chance="33050" />
+    <item id="2152" countmax="100" chance="31675" />
+    <!-- platinum coin -->
+    <item id="2260" countmax="2" chance="16475" />
+    <!-- blank rune -->
+    <item id="1987" chance="100000">
+      <!-- bag -->
+      <inside>
+        <item id="2148" countmax="100" chance="44650" />
+        <!-- gold coin -->
+        <item id="2148" countmax="100" chance="44650" />
+        <!-- gold coin -->
+        <item id="2148" countmax="100" chance="44650" />
+        <!-- gold coin -->
+        <item id="2476" chance="20000" />
+        <!-- knight armor -->
+        <item id="2177" chance="1100" />
+        <!-- life crystal -->
+        <item id="2454" chance="800" />
+        <!-- war axe -->
+      </inside>
+    </item>
+  </loot>
+</monster>
+
+

@@ -1,0 +1,10 @@
+<!-- This is an example NPC that can be used on Jiddo's NPC system -->
+<!-- It is not in an in-game spawn -->
+
+<!-- This is an example NPC that sells runes and uses parameter callbacks -->
+<npc name="Donald McRonald" script="guards.lua" autowalk="25">
+	<health now="150" max="150"/>
+	<look type="128" head="22" body="94" legs="79" feet="117" corpse="2212"/>
+	<parameters>
+	</parameters>
+</npc>

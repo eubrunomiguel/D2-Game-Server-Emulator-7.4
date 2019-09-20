@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Borkas" script="default.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="128" head="59" body="82" legs="58" feet="95" addons="0"/>
+<voices>
+<voice text="Welcome to the house of fashion, Iron Sparrow!" interval2="100" margin="1" yell="no"/>
+</voices>
+<parameters>
+        <parameter key="message_greet" value="Hey |PLAYERNAME|, what'cha want?"/>
+        <parameter key="message_farewell" value="Thanks and see ya."/>
+		<parameter key="message_walkaway" value="Thanks and see ya." />
+		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture." />
+   
+
+  <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="offers;" />
+        <parameter key="keyword_reply1" value="I sell barrel kit, dresser kit, box kit,large trunk kit, drawer kit, locker kit, trough kit , blue round pillow, red round pillow, purple round pillow, small turqoise pillow, blue tapestry, green tapestry, orange tapestry, purple tapestry, red tapestry, white tapestry, yellow tapestry." />
+
+<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="barrel,3932,12;box,1738,10;chest,1748,10;crate,1739,10;drawer,3915,18;dresser,3916,25;drawer,3918,30;" />
+    </parameters>
+</npc>
+
+
+

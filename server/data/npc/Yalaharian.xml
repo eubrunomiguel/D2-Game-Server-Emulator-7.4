@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Yalahari" script="data/npc/scripts/azerus.lua" walkinterval="2000">
+    <health now="100" max="100"/>
+    <look type="309" head="38" body="88" legs="88" feet="115" addons="0"/>
+    <parameters>
+        <parameter key="message_greet" value="I greet thee, my loyal subject |PLAYERNAME|." />
+        <parameter key="message_idletimeout" value="What a lack of manners!"/>
+        <parameter key="message_walkaway" value="What a lack of manners!"/>
+                <parameter key="message_farewell" value="Good bye, |PLAYERNAME|!"/>
+    </parameters>
+</npc>

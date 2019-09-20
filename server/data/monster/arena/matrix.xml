@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="matrix" nameDescription="a matrix" race="VENOM" experience="45000" speed="420" manacost="395">
+  <health now="45000" max="45000"/>
+  <look type="83" head="20" body="30" legs="40" feet="50" corpse="3013"/>
+  <targetchange interval="2000" chance="0"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-500" max="-930" poison="650"/>
+    <attack name="poison" interval="1000" chance="12" range="7" min="-455" max="-935">
+      <attribute key="shootEffect" value="poison"/>
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+    <attack name="speed" interval="1000" chance="13" range="7" speedchange="-700" duration="25000">
+      <attribute key="shootEffect" value="poison"/>
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+    <attack name="poisoncondition" interval="3000" chance="17" radius="5" target="0" min="-550" max="-850">
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+  </attacks>
+  <defenses armor="25" defense="20">
+    <defense name="speed" interval="1000" chance="8" speedchange="450" duration="9000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="0"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <summons maxSummons="4">
+    <summon name="ancient scarab" interval="2000" chance="20" max="4"/>
+  </summons>
+  <loot>
+    <item id="2150" countmax="4" chance="12000"/> -- small amethyst
+    <item id="2148" countmax="90" chance1="100000" chancemax="0"/> -- gold coin
+    <item id="2162" chance="25000"/> -- magic lightwand
+    <item id="2463" chance="22220"/> -- plate armor :: Arm 10
+    <item id="1987" chance="100000">
+      -- bag
+      <item id="2149" countmax="3" chance="6000"/> -- small emerald
+      <inside>
+        <item id="2148" countmax="22" chance="99900"/> -- gold coin
+        <item id="2135" chance="14280"/> -- scarab amulet
+        <item id="2159" countmax="4" chance1="5505" chancemax="0"/> -- scarab coin
+        <item id="2142" chance="80000"/> -- ancient amulet
+        <item id="2440" chance="20000"/> -- daramanian waraxe :: Def 15 :: Atk 39
+        <item id="2540" countmax="1" chance="50000"/> -- scarab shield :: Def 25
+      </inside>
+    </item>
+  </loot>
+</monster>

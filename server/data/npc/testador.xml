@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Roludo" script="rune.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="130" head="19" body="86" legs="87" feet="95"/>
+    <parameters>
+	     <parameter key="message_greet" value="|PLAYERNAME|! Eu testo as fita toda"/>
+        <parameter key="module_keywords" value="1" />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="" />
+        <parameter key="shop_sellable" value="" />
+    </parameters>
+</npc>

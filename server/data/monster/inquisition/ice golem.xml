@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Ice Golem" nameDescription="an ice golem" race="undead" experience="295" speed="195" manacost="0">
+	<health now="385" max="385"/>
+  <look type="95" head="20" body="30" legs="40" feet="50" corpse="3022"/>
+	<targetchange interval="2000" chance="5"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="50"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="100" attack="40"/>
+		<attack name="physical" interval="2000" chance="15" range="7" target="1" min="-50" max="-85">
+  <attribute key="areaEffect" value="blackspark"/>
+		</attack>
+		<attack name="speed" interval="2000" chance="12" length="8" spread="0" speedchange="-220" duration="5000">
+  <attribute key="areaEffect" value="blackspark"/>
+		</attack>	
+		<attack name="skills" interval="2000" chance="13" radius="3" target="0" shielding="-1" axe="-1" club="-1" sword="-1" fist="-1" distance="-1">
+  <attribute key="areaEffect" value="blackspark"/>
+		</attack>	
+
+	</attacks>
+	<defenses armor="25" defense="26"/>
+	<elements>
+
+		<element firePercent="100"/>
+
+		<element physicalPercent="40"/>
+		<element energyPercent="-20"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="2000" chance="5">
+		<voice sentence="Chrr."/>
+	</voices>
+	<loot>
+    <item id="2148" countmax="56" chance="8500" /><!-- gold coin -->
+
+
+    <item id="2479" chance="1000" /><!-- strange helmet -->
+    <item id="2144" chance="1950" /><!-- black pearl -->
+
+    <item id="2396" chance="850" /><!-- ice rapier -->
+    <item id="1987" chance="100000"><!-- bag -->
+        <inside>
+            <item id="2146" chance="1050" /><!-- small sapphire -->
+
+            <item id="2145" chance="650" /><!-- small diamond -->
+
+        </inside>
+    </item>
+</loot>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</monster>

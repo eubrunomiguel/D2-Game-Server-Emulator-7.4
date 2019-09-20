@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<globalevents>
+    <globalevent name="globalevent" time="5:00" script="global_save.lua"/>
+	<globalevent name="serversave" interval="1800000" script="serversave.lua"/>
+	<globalevent name="offers" interval="600000" script="mensagem.lua"/> 
+  	<globalevent name="website_shop_item_delivery" interval="30000" script="shop.lua"/>
+  	<globalevent name="website_shop_action_delivery" interval="60000" script="websitemessage.lua"/>
+	<globalevent name="startup" type="startup" script="init.lua"/>
+	
+	<globalevent name="segunda" time="6:00" script="bonusonmonday.lua"/>
+	<globalevent name="quarta" time="11:00" script="bonusonwednesday.lua"/>
+	<globalevent name="sexta" time="19:00" script="bonusonfriday.lua"/>
+	<globalevent name="domingo" time="13:00" script="bonusonsunday.lua"/>
+
+	<!--<globalevent name="protection" interval="30000" script="protection.lua"/>-->
+</globalevents>

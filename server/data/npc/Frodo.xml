@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Frodo" script="default.lua" walkinterval="1000" access="3" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="128" head="58" body="68" legs="109" feet="131" addons="0"/>
+    <parameters>
+        
+        <parameter key="message_greet" value="Welcome to Frodo's Hut. You heard about the news?"/>
+		<parameter key="message_farewell" value="Please come back from time to time."/>
+		
+        <parameter key="message_sendtrade" value="Of course, take a look at the great food I sell."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;job;news;offer;" />
+        <parameter key="keyword_reply1" value="Just call me Frodo." />
+        <parameter key="keyword_reply2" value="I am the owner of this saloon. I call it Frodo's Hut. I am also selling food." />
+        <parameter key="keyword_reply3" value="Some travelers from Edron told about a great treasure guarded by cruel demons in the dungeons there." />
+        <parameter key="keyword_reply4" value="I can offer you bread, cheese, ham, or meat." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="brown mushroom,2789,10;bread,2689,4;cheese,8368,6;ham,2671,8;meat,2666,5;" />
+        <parameter key="shop_sellable" value="" />
+    </parameters>
+</npc>

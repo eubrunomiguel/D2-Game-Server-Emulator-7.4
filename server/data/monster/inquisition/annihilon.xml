@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Annihilon" nameDescription="annihilon" race="fire" experience="10000" speed="132" manacost="0">
+	<health now="40000" max="40000"/>
+  <look type="35" corpse="2916"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="85"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+    <attack name="melee" interval="2000" min="-140" max="-490"/>
+		<attack name="physical" interval="2000" chance="20" radius="5" target="1" min="-100" max="-300">
+  <attribute key="areaEffect" value="blackspark"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="15" target="0" radius="1">
+  <attribute key="areaEffect" value="blackspark"/>
+		</attack>
+		<attack name="energy" interval="2000" chance="25" radius="3" target="1" min="-100" max="-500">
+			<attribute key="areaEffect" value="energyarea"/>
+		</attack>
+		<attack name="poisoncondition" interval="2000" chance="20" range="5" min="-1" max="-400">
+			<attribute key="shooteffect" value="poison"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="25" radius="5" target="0" min="-50" max="-210">
+			<attribute key="areaEffect" value="energyarea"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="20" length="8" spread="0" min="-100" max="-400">
+			      <attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+		<attack name="speed" interval="2000" chance="25" radius="5" target="1" speedchange="-600" duration="5000">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+	</attacks>
+
+	<elements>
+		<element energyPercent="96"/>
+		<element icePercent="20"/>
+		<element earthPercent="-5"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Annihilation!" yell="1"/>
+	</voices>
+	<loot>
+
+    <item id="2152" countmax="24" chance="10775" /><!-- platinum coin -->
+    <item id="2148" countmax="97" chance="58950" /><!-- gold coin -->
+
+    <item id="2515" chance="9825" /><!-- guardian shield -->
+
+    <item id="2127" chance="29825" /><!-- emerald bangle -->
+    <item id="1988" chance="100000"><!-- bag -->
+        <inside>
+            <item id="2153" chance="17825" /><!-- violet gem -->
+            <item id="2381" chance="28500" /><!-- halberd -->
+            <item id="2156" chance="20500" /><!-- red gem -->
+
+            <item id="2528" chance="15175" /><!-- tower shield -->
+
+            <item id="2452" chance="36500" /><!-- heavy mace -->
+            <item id="2154" chance="25825" /><!-- yellow gem -->
+            <item id="2427" chance="17825" /><!-- guardian halberd -->
+
+            <item id="2158" chance="17825" /><!-- blue gem -->
+
+            <item id="2547" countmax="82" chance="8950" /><!-- power bolt -->
+            <item id="2155" chance="20500" /><!-- green gem -->
+
+            <item id="2520" chance="7175" /><!-- demon shield -->
+
+            <item id="2514" chance="4500" /><!-- mastermind shield -->
+
+            <item id="2519" chance="8500" /><!-- crown shield -->
+
+        </inside>
+    </item>
+</loot>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</monster>

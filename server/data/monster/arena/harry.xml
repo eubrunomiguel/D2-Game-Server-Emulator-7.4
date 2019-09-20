@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="harry" nameDescription="a potter" race="blood" experience="95000" speed="470" manacost="0">
+  <health now="95000" max="95000"/>
+  <look type="130" head="19" body="71" legs="128" feet="128" addons="1" corpse="3128"/>
+  <targetchange interval="5000" chance="30"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="80" attack="113"/>
+    <attack name="energy" interval="2000" chance="9" range="7" target="1" min="-450" max="-650">
+      <attribute key="shootEffect" value="energy"/>
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+    <attack name="speed" interval="2000" chance="5" range="7" speedchange="-440" duration="5000">
+      <attribute key="shootEffect" value="energy"/>
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+    <attack name="lifedrain" interval="2000" chance="8" target="0" radius="3" min="-300" max="-500">
+      <attribute key="areaEffect" value="blackspark"/>
+    </attack>
+    <attack name="fire" interval="2000" chance="7" length="5" spread="3" min="-400" max="-600">
+      <attribute key="areaEffect" value="explosionarea"/>
+    </attack>
+    <attack name="energy" interval="2000" chance="6" length="8" spread="0" min="-400" max="-1000">
+      <attribute key="areaEffect" value="redspark"/>
+    </attack>
+    <attack name="energy" interval="2000" chance="10" range="7" radius="4" target="0" min="-300" max="-700">
+      <attribute key="areaEffect" value="redspark"/>
+    </attack>
+  </attacks>
+  <defenses armor="20" defense="20">
+    <defense name="speed" interval="2000" chance="20" speedchange="360" duration="2000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity paralyze="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <summons maxSummons="2">
+    <summon name="demon" interval="2000" chance="15" max="2"/>
+  </summons>
+  <voices interval="3000" chance="30">
+    <voice sentence="Ahhhhrrrr!"/>
+    <voice sentence="Waaaaah!"/>
+    <voice sentence="Carnage!"/>
+  </voices>
+  <loot>
+    <item id="2148" countmax="100" chance="41900" />
+    <!-- gold coin -->
+    <item id="2148" countmax="100" chance="41900" />
+    <!-- gold coin -->
+    <item id="2148" countmax="100" chance="41900" />
+    <!-- gold coin -->
+    <item id="2152" countmax="100" chance="23500" />
+    <!-- platinum coin -->
+    <item id="2150" countmax="100" chance="57500" />
+    <!-- small amethyst -->
+    <item id="1987" chance="100000">
+      <!-- bag -->
+      <inside>
+        <item id="2645" chance="14750" />
+        <!-- steel boots -->
+        <item id="2124" chance="5500" />
+        <!-- crystal ring -->
+      </inside>
+    </item>
+  </loot>
+</monster>
+
+
+
+
+
+

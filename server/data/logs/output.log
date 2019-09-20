@@ -1,0 +1,33 @@
+:: ======================
+::
+::  D2 version 0.2
+::
+:: ======================
+::
+:: Initializing the random numbers... [done]
+:: Loading lua script config.lua...  [done]
+:: Using data directory data/... [done]
+:: Checking Database Connection... [done]
+:: Checking Schema version... Version = 24 [done]
+:: Loading RSA key...[done]
+:: Loading data/vocations.xml... [done]
+:: Loading data/items/items.otb... [done]
+:: Loading data/items/items.xml... [done]
+:: Loading Script Systems
+:: Loading Weapons ...[done]
+:: Loading Spells ...[done]
+:: Loading Actions ...[done]
+:: Loading Talkactions ...[done]
+:: Loading MoveEvents ...[done]
+:: Loading CreatureEvents ...[done]
+:: Loading GlobalEvents ...[done]
+:: Loading data/monster/monsters.xml... [done]
+:: Loading admin protocol config... [done]
+:: Worldtype: PVP
+:: Cleaning online players info... [done]
+:: Skulls enabled
+:: Use MD5 passwords
+:: Loading map from: data/world/world.otbm OTBM
+Map size: 65000x65000
+Map description: Saved with Remere's Map Editor 2.2
+Map description: Aztra 7.6

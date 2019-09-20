@@ -1,0 +1,33 @@
+function onStepIn(cid, item, pos)
+
+local pos = {x = 33273, y = 32182, z = 8}
+    local heart = 2353
+	item1 = {x = 33320, y = 32054, z = 8, stackpos=1}
+	
+if item.actionid == 11000 then
+if getTileItemById(item1, heart).uid > 0 then
+doRemoveItem(getTileItemById(item1, heart).uid,1)
+doTeleportThing(cid, pos)
+        doSendMagicEffect(getCreaturePosition(cid),10)
+        doPlayerSendTextMessage(cid,22,"Good luck!")
+end
+else
+doPlayerSendTextMessage(cid, 22, "You need 6 burning hearts!")
+end
+else
+doPlayerSendTextMessage(cid, 22, "You need 6 burning hearts!")
+end
+else
+doPlayerSendTextMessage(cid, 22, "You need 6 burning hearts!")
+end
+else
+doPlayerSendTextMessage(cid, 22, "You need 6 burning hearts!")
+end
+else
+doPlayerSendTextMessage(cid, 22, "You need 6 burning hearts!")
+end
+else
+doPlayerSendTextMessage(cid, 22, "You need 6 burning hearts!")
+end
+	return TRUE
+end
