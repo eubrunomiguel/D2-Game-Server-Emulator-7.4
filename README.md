@@ -31,8 +31,8 @@ Execute:
 # Running
 All the following requirements are automated by our scripts: 
 - compiling
-- editing ip addresses and database information from the `config.lua` file
-- booting, installing and important the database
+- editing ip addresses and database information in the `config.lua` file
+- booting, installing and importing the database
 ## Configuration
 You must add the ip address of your machine on:
 ```
