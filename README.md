@@ -15,7 +15,7 @@ New features:
 # Setup
 We provide automated scripts to compile, run and manage the server and all its dependencies. The server and dependencies can run on any machine that supports `docker`.
 
-To start, please follow the next two steps:
+To start, please clone (or download) this repository and follow the next two steps:
 1. Provisioning 
 2. Dependencies
 3. [Optional] DDoS protection rules
