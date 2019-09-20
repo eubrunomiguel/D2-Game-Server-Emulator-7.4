@@ -11,9 +11,9 @@ To start, please follow the next two steps:
 1. Provisioning 
 2. Dependencies
 3. [Optional] DDoS protection rules
-## Provisioning
+### 1. Provisioning
 Rent or buy any Linux machine. We recommend Ubuntu or Debian.
-## Dependencies
+### 2. Dependencies
 SSH to the machine and execute the following script. It will install `docker`: 
 ```
 ./@devops/vm/boot.sh
@@ -22,7 +22,7 @@ Next, register an account in `hub.docker.com` and login on your machine with:
 ```
 docker login --username=<your_docker_username> --password=<your_docker_password>
 ```
-## Firewall
+## 3. Firewall
 This step is optional. It loads firewall rules to alleviate DDoS attacks.
 Execute:
 ```
