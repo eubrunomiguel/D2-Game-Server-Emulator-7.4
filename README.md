@@ -8,9 +8,9 @@ Some features include:
 We provide automated scripts to compile, run and manage the server and all its dependencies. The server and dependencies can run on any machine that supports `docker`.
 
 To start, please follow the next two steps:
-1 - Provisioning 
-2 - Dependencies
-3 - [Optional] DDoS protection rules
+1. Provisioning 
+2. Dependencies
+3. [Optional] DDoS protection rules
 ## Provisioning
 Rent or buy any Linux machine. We recommend Ubuntu or Debian.
 ## Dependencies
@@ -33,6 +33,15 @@ All the following configuration is automated by our scripts:
 - compiling
 - editing ip addresses and database information from the `config.lua` file
 - booting, installing and important the database
+## Configuration
+You must add the ip address of your machine on:
+```
+./env/vm.env
+```
+You can (must for security) edit the database configuration (passwords) on:
+```
+./env/mysql.env
+```
 ## Compiling
 To run the application, you will need to build and push (optionally) a docker image with your server files.
 ```
@@ -43,7 +52,14 @@ Optionally, you can push to your docker repository. Note, ensure your repository
 ```
 docker push <your_docker_username>/tibia:<release-version>
 ```
-
-// wip
+## Turning On/Off the Server
+To turn on the server, execute:
+```
+docker-compose up server
+```
+To turn off the server, execute:
+```
+docker-compose down server
+```
 
 
