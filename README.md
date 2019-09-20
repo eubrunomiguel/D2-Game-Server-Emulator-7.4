@@ -2,7 +2,15 @@
 D2 Server is based on OTHire. OTHire is a free MMORPG emulation, that creates a own gameworld server, based on the CIPSoft's Tibia version 7.72. It is a fork of the OpenTibia Server project.
 
 Some features include:
-// TODO
+- full 7.4 features
+- cast
+- tasks
+- guild war
+- expanded real map, including Yalahar
+- market
+- conjured runes
+- hunted system
+- [external repository] mobile app
 
 # Setup
 We provide automated scripts to compile, run and manage the server and all its dependencies. The server and dependencies can run on any machine that supports `docker`.
