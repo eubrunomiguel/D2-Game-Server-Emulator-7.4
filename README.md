@@ -11,9 +11,9 @@ To start, please follow the next two steps:
 1. Provisioning 
 2. Dependencies
 3. [Optional] DDoS protection rules
-### 1. Provisioning
+## 1. Provisioning
 Rent or buy any Linux machine. We recommend Ubuntu or Debian.
-### 2. Dependencies
+## 2. Dependencies
 SSH to the machine and execute the following script. It will install `docker`: 
 ```
 ./@devops/vm/boot.sh
@@ -33,7 +33,7 @@ All the following requirements are automated by our scripts:
 - compiling
 - editing ip addresses and database information in the `config.lua` file
 - booting, installing and importing the database
-### Configuration
+## Configuration
 You must add the ip address of your machine on:
 ```
 ./env/vm.env
@@ -42,7 +42,7 @@ You can (must for security) edit the database configuration (passwords) on:
 ```
 ./env/mysql.env
 ```
-### Compiling
+## Compiling
 To run the application, you will need to build and push (optionally) a docker image with your server files.
 ```
 cd server
@@ -52,7 +52,7 @@ Optionally, you can push to your docker repository. Note, ensure your repository
 ```
 docker push <your_docker_username>/tibia:<release-version>
 ```
-### Turning On/Off the Server
+## Turning On/Off the Server
 To turn on the server, execute:
 ```
 docker-compose up server
