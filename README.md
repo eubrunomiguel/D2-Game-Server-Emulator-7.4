@@ -29,7 +29,7 @@ Execute:
 ./@devops/vm/firewall.sh
 ```
 # Running
-All the following configuration is automated by our scripts: 
+All the following requirements are automated by our scripts: 
 - compiling
 - editing ip addresses and database information from the `config.lua` file
 - booting, installing and important the database
