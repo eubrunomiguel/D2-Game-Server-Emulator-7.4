@@ -29,6 +29,7 @@
 #include "protocolgame.h"
 #include "admin.h"
 #include "status.h"
+#include "configmanager.h"
 #include <boost/bind.hpp>
 
 bool Connection::m_logError = true;
@@ -36,6 +37,8 @@ bool Connection::m_logError = true;
 #ifdef __ENABLE_SERVER_DIAGNOSTIC__
 uint32_t Connection::connectionCount = 0;
 #endif
+
+extern ConfigManager g_config;
 
 Connection_ptr ConnectionManager::createConnection(boost::asio::ip::tcp::socket* socket,
 	boost::asio::io_service& io_service, ServicePort_ptr servicer)
@@ -124,7 +127,7 @@ void Connection::closeConnectionTask()
 	if(m_protocol){
 		m_protocol->setConnection(Connection_ptr());
 		m_protocol->releaseProtocol();
-		m_protocol = NULL;
+		m_protocol = nullptr;
 	}
 
 	m_connectionState = CONNECTION_STATE_CLOSING;
@@ -216,7 +219,7 @@ void Connection::onStopOperation()
 	}
 
 	delete m_socket;
-	m_socket = NULL;
+	m_socket = nullptr;
 
 	m_connectionLock.unlock();
 	ConnectionManager::getInstance()->releaseConnection(shared_from_this());
@@ -249,7 +252,7 @@ void Connection::acceptConnection()
 {
 	try{
 		++m_pendingRead;
-		m_readTimer.expires_from_now(boost::posix_time::seconds(Connection::read_timeout));
+		m_readTimer.expires_from_now(boost::posix_time::seconds((int)Connection::read_timeout));
 		m_readTimer.async_wait( boost::bind(&Connection::handleReadTimeout, boost::weak_ptr<Connection>(shared_from_this()), boost::asio::placeholders::error));
 
 		// Read size of the first packet
@@ -282,11 +285,26 @@ void Connection::parseHeader(const boost::system::error_code& error)
 		return;
 	}
 
+ 	if (g_config.getNumber(ConfigManager::MAX_PACKETS_PER_SECOND) != 0){
+ 		uint32_t timePassed = std::max<uint32_t>(1, (time(nullptr) - m_timeConnected) + 1);
+ 		if ((++m_packetsSent / timePassed) > (uint32_t)g_config.getNumber(ConfigManager::MAX_PACKETS_PER_SECOND)){
+ 			std::cout << convertIPToString(getIP()) << " disconnected for exceeding packet per second limit." << std::endl;
+ 			closeConnection();
+ 			m_connectionLock.unlock();
+ 			return;
+ 		}
+ 
+ 		if (timePassed > 2){
+ 			m_timeConnected = time(nullptr);
+ 			m_packetsSent = 0;
+ 		}
+ 	}
+
 	--m_pendingRead;
 
 	try{
 		++m_pendingRead;
-		m_readTimer.expires_from_now(boost::posix_time::seconds(Connection::read_timeout));
+		m_readTimer.expires_from_now(boost::posix_time::seconds((int)Connection::read_timeout));
 		m_readTimer.async_wait( boost::bind(&Connection::handleReadTimeout, boost::weak_ptr<Connection>(shared_from_this()),
 			boost::asio::placeholders::error));
 
@@ -348,7 +366,7 @@ void Connection::parsePacket(const boost::system::error_code& error)
 
 	try{
 		++m_pendingRead;
-		m_readTimer.expires_from_now(boost::posix_time::seconds(Connection::read_timeout));
+		m_readTimer.expires_from_now(boost::posix_time::seconds((int)Connection::read_timeout));
 		m_readTimer.async_wait( boost::bind(&Connection::handleReadTimeout, boost::weak_ptr<Connection>(shared_from_this()),
 			boost::asio::placeholders::error));
 
@@ -411,7 +429,7 @@ void Connection::internalSend(OutputMessage_ptr msg)
 
 	try{
 		++m_pendingWrite;
-		m_writeTimer.expires_from_now(boost::posix_time::seconds(Connection::write_timeout));
+		m_writeTimer.expires_from_now(boost::posix_time::seconds((int)Connection::write_timeout));
 		m_writeTimer.async_wait( boost::bind(&Connection::handleWriteTimeout, boost::weak_ptr<Connection>(shared_from_this()),
 			boost::asio::placeholders::error));
 
