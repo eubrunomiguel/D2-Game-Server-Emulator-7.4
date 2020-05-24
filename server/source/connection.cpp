@@ -29,7 +29,6 @@
 #include "protocolgame.h"
 #include "admin.h"
 #include "status.h"
-#include "configmanager.h"
 #include <boost/bind.hpp>
 
 bool Connection::m_logError = true;
@@ -37,8 +36,6 @@ bool Connection::m_logError = true;
 #ifdef __ENABLE_SERVER_DIAGNOSTIC__
 uint32_t Connection::connectionCount = 0;
 #endif
-
-extern ConfigManager g_config;
 
 Connection_ptr ConnectionManager::createConnection(boost::asio::ip::tcp::socket* socket,
 	boost::asio::io_service& io_service, ServicePort_ptr servicer)
